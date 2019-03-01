@@ -1,0 +1,19 @@
+##############################################
+joint_sim_origin:
+-----------------
+author: lokman
+discription: a single joint' position/impedance/zero-force control simulation
+special modul: friction compensation, disturbance generation, joint (motor and harmonic drive) and link modeling with simulink
+
+##############################################
+joint_sim_v1:
+modified by: qiming yu
+discription: added a collision detection modul, changed link model from simulink model to simcape model
+add. special model: collision detection, visulation of link motion
+
+#############################################
+joint_sim_v2:
+TODO: 
+change joint model to simcape
+test 
+
