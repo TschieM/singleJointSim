@@ -51,9 +51,17 @@ T_cur = 2e-3;           % s, current control closed-loop time constant
 T_signal_LPF = 2e-3;    % s, signal filter time constant
 tau_max_ctrl = 180;     % Nm, maximum torque
 
+% controller gains for zero force control mode
+Kp_zf = 0;
+Kd_zf = 0;
+Ks_zf = 0;
+Kt_zf = 0;
+K__zf = 0;     % not used in beasty sim controller
+Ki_zf = 0;     % not used in beasty sim controller
+
 % controller gains for torque control mode
-Kp_trq = 0;
-Kd_trq = 0;
+Kp_trq = 25;
+Kd_trq = 10;
 Ks_trq = 0.04;
 Kt_trq = 9.10251;
 K__trq = 0;     % not used in beasty sim controller
@@ -73,7 +81,8 @@ Ki_pos = 0;     % not used in beasty sim controller
 B_theta = J_joint/(1+Kt_trq);
 
 % friction observer
-L_fricObs = 50;     % 1/s
+L_fricObs = 1000;     % 1/s
 
-% Momentum obersever
-K0_colli = 100;
+% Collision detection
+K0_colli = 1000;         % gain of momentum observer
+threshold_colli = 5;    % threshold to distinguish collision and noise
